@@ -13,15 +13,15 @@ public class Historial {
     
     private String tipoEvento;
     private String fechaHora;
-    private Empleados username;
+    private Empleado username;
 
     public Historial() {
         tipoEvento = "";
         fechaHora = "";
-        username = new Empleados();
+        username = new Empleado();
     }
 
-    public Historial(String tipoEvento, String fechaHora, Empleados username) {
+    public Historial(String tipoEvento, String fechaHora, Empleado username) {
         this.tipoEvento = tipoEvento;
         this.fechaHora = fechaHora;
         this.username = username;
@@ -43,11 +43,11 @@ public class Historial {
         this.fechaHora = fechaHora;
     }
 
-    public Empleados getUsername() {
+    public Empleado getUsername() {
         return username;
     }
 
-    public void setUsername(Empleados username) {
+    public void setUsername(Empleado username) {
         this.username = username;
     }
 

@@ -9,23 +9,32 @@ package DB4OSisGesIncidencias;
  *
  * @author sfcar
  */
-public class Incidencias {
+public class Incidencia {
     
+    private int idIncidencia;
     private String fechaHora;
-    private Empleados origen;
-    private Empleados destino;
+    private Empleado origen;
+    private Empleado destino;
     private String tipo;
     private String detalle;
 
-    public Incidencias() {
+    public Incidencia() {
+        idIncidencia = 0;
         fechaHora = "";
-        origen = new Empleados();
-        destino = new Empleados();
+        origen = new Empleado();
+        destino = new Empleado();
         tipo = "";
         detalle = "";
     }
 
-    public Incidencias(String fechaHora, Empleados origen, Empleados destino, String tipo, String detalle) {
+    public Incidencia(int idIncidencia) {
+        this.idIncidencia = idIncidencia;
+    }
+    
+    
+
+    public Incidencia(int idIncidencia, String fechaHora, Empleado origen, Empleado destino, String tipo, String detalle) {
+        this.idIncidencia = idIncidencia;
         this.fechaHora = fechaHora;
         this.origen = origen;
         this.destino = destino;
@@ -33,6 +42,14 @@ public class Incidencias {
         this.detalle = detalle;
     }
 
+    public int getIdIncidencia() {
+        return idIncidencia;
+    }
+
+    public void setIdIncidencia(int idIncidencia) {
+        this.idIncidencia = idIncidencia;
+    }
+    
     public String getFechaHora() {
         return fechaHora;
     }
@@ -41,19 +58,19 @@ public class Incidencias {
         this.fechaHora = fechaHora;
     }
 
-    public Empleados getOrigen() {
+    public Empleado getOrigen() {
         return origen;
     }
 
-    public void setOrigen(Empleados origen) {
+    public void setOrigen(Empleado origen) {
         this.origen = origen;
     }
 
-    public Empleados getDestino() {
+    public Empleado getDestino() {
         return destino;
     }
 
-    public void setDestino(Empleados destino) {
+    public void setDestino(Empleado destino) {
         this.destino = destino;
     }
     
@@ -75,8 +92,10 @@ public class Incidencias {
 
     @Override
     public String toString() {
-        return "Incidencias{" + "fechaHora=" + fechaHora + ", origen=" + origen + ", destino=" + destino + ", tipo=" + tipo + ", detalle=" + detalle + '}';
+        return "Incidencia{" + "idIncidencia=" + idIncidencia + ", fechaHora=" + fechaHora + ", origen=" + origen + ", destino=" + destino + ", tipo=" + tipo + ", detalle=" + detalle + '}';
     }
+
+    
 
 
     

@@ -9,36 +9,36 @@ package DB4OSisGesIncidencias;
  *
  * @author sfcar
  */
-public class Empleados {
+public class Empleado implements Cloneable, Comparable<Empleado> {
     
     private String username;
     private String password;
     private String nombreCompleto;
     private String telefono;
 
-    public Empleados() {
+    public Empleado() {
         username = "";
         password = "";
         nombreCompleto = "";
         telefono = "";
     }
 
-    public Empleados(String username) {
+    public Empleado(String username) {
         this.username = username;
     }
 
-    public Empleados(String username, String password) {
+    public Empleado(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public Empleados(String username, String nombreCompleto, String telefono) {
+    public Empleado(String username, String nombreCompleto, String telefono) {
         this.username = username;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
     }
 
-    public Empleados(String username, String password, String nombreCompleto, String telefono) {
+    public Empleado(String username, String password, String nombreCompleto, String telefono) {
         this.username = username;
         this.password = password;
         this.nombreCompleto = nombreCompleto;
@@ -79,9 +79,22 @@ public class Empleados {
         this.telefono = telefono;
     }
 
-    @Override //Sobreescribir el método .toString para que muestre lo que queramos.
+    @Override
     public String toString() {
-        return username;
+        return "Empleado{" + "username=" + username + ", password=" + password + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + '}';
     }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int compareTo(Empleado t) { 
+        return username.compareTo(t.getUsername());
+        //Esto se hace para que 2 objetos empleados sean comparables por su username
+    }
+
+    
     
 }
